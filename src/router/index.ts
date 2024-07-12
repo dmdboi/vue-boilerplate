@@ -34,6 +34,24 @@ const router = createRouter({
           name: "Dashboard",
           component: HomeView,
         },
+        {
+          path: "/dashboard/users",
+          name: "Users",
+          meta: {
+            isDynamic: false,
+            previousRoute: "Dashboard",
+          },
+          component: HomeView,
+        },
+        {
+          path: "/dashboard/users/:id",
+          name: "User",
+          meta: {
+            isDynamic: true,
+            previousRoute: "Users",
+          },
+          component: HomeView,
+        },
       ],
     },
   ],
