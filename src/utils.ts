@@ -9,8 +9,8 @@ export function cn(...inputs: ClassValue[]) {
 
 export const sidebarRoutes = [
   {
-    name: "Home",
-    path: "/",
+    name: "Dashboard",
+    path: "/dashboard",
     icon: Home,
   },
 ];

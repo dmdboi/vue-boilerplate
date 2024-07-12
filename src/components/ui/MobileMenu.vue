@@ -7,35 +7,23 @@
       </Button>
     </SheetTrigger>
     <SheetContent side="left" class="sm:max-w-xs">
-      <nav class="grid gap-6 text-lg font-medium">
-        <a href="#" class="flex items-center justify-center w-10 h-10 gap-2 text-lg font-semibold rounded-full group shrink-0 bg-primary text-primary-foreground md:text-base">
-          <Package2 class="w-5 h-5 transition-all group-hover:scale-110" />
-          <span class="sr-only">Acme Inc</span>
-        </a>
+      <nav class="grid gap-6 px-6 text-lg font-medium">
+        <RouterLink
+          v-for="route in sidebarRoutes"
+          :to="route.path"
+          class="flex items-center justify-center w-10 h-10 gap-2 text-lg font-semibold group shrink-0 text-primary md:text-base">
+          <span>{{ route.name }}</span>
+        </RouterLink>
       </nav>
     </SheetContent>
   </Sheet>
 </template>
 
 <script setup lang="ts">
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { PanelLeft } from "lucide-vue-next";
 
-import {
-  CircleUser,
-  Copy,
-  CreditCard,
-  File,
-  Home,
-  LineChart,
-  ListFilter,
-  MoreVertical,
-  Package,
-  Package2,
-  PanelLeft,
-  Search,
-  Settings,
-  ShoppingCart,
-  Truck,
-  Users2,
-} from "lucide-vue-next";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+
+import { sidebarRoutes } from "@/utils";
 </script>
